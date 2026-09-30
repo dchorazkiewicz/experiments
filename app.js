@@ -1,5 +1,5 @@
 
-const NOTE_NAMES = ['C','C♯/D♭','D','D♯/E♭','E','F','F♯/G♭','G','G♯/A♭','A','A♯/B','H'];
+const NOTE_NAMES = ['C','C♯/D♭','D','D♯/E♭','E','F','F♯/G♭','G','G♯/A♭','A','A♯/B♭','H'];
 const WHITE_PCS = new Set([0,2,4,5,7,9,11]);
 const PL_WHITE = ['C','D','E','F','G','A','H'];
 let ctx;
