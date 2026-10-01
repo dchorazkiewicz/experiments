@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#081018">
   <title>Nuty — interaktywna pracownia</title>
-  <meta name="description" content="Interaktywna nauka nut: fortepian, pięciolinia, melodie, rytm, metrum i oktawy w jednym miejscu.">
+  <meta name="description" content="Interaktywna nauka nut: wysokość, rytm, takt i melodie z fortepianem oraz pięciolinią.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,9 +13,9 @@
     <div class="wrap topbar-inner">
       <a class="brand" href="#pracownia">♪ <strong>Nuty</strong> — interaktywna pracownia</a>
       <nav>
-        <a href="#pracownia">Pracownia</a>
-        <a href="#teoria">Jak to czytać</a>
-        <a href="#rytm">Rytm i takt</a>
+        <a href="#pracownia">Od nuty do melodii</a>
+        <a href="#teoria">Ściąga</a>
+        <a href="#rytm">Rytm i metrum</a>
       </nav>
     </div>
   </header>
@@ -23,17 +23,17 @@
   <main class="wrap">
     <section class="intro">
       <div>
-        <div class="eyebrow">fortepian + pięciolinia + dźwięk = jedno ćwiczenie</div>
-        <h1>Klikasz klawisz.<br><span>Widzisz nutę.</span><br>Słyszysz dźwięk.</h1>
-        <p>Bez planu na pięć dni i bez przeskakiwania po stronie. Najważniejsza część jest poniżej: fortepian i zapis nutowy są zawsze obok siebie, a w melodiach podświetlają się równocześnie.</p>
+        <div class="eyebrow">najpierw pojęcie, potem zastosowanie</div>
+        <h1>Jedna nuta.<br><span>Potem rytm.</span><br>Dopiero melodia.</h1>
+        <p>Najpierw zobaczysz, gdzie dźwięk leży na pięciolinii. Potem nauczysz się, czym jest ćwierćnuta i inne wartości. Następnie złożysz cztery nuty w takt 4/4. Dopiero wtedy przejdziesz do „Panie Janie” i innych melodii.</p>
       </div>
       <div class="intro-card">
-        <strong>Jak z tego korzystać</strong>
+        <strong>Kolejność ma znaczenie</strong>
         <ol>
-          <li>Kliknij dowolny klawisz i zobacz jego położenie na pięciolinii.</li>
-          <li>Wybierz melodię i naciśnij „Graj”.</li>
-          <li>Patrz jednocześnie na świecący klawisz i świecącą nutę.</li>
-          <li>Wyłącz podpisy nut, gdy zaczniesz je rozpoznawać sam.</li>
+          <li><b>Wysokość:</b> C, D, E… i ich miejsce na pięciolinii.</li>
+          <li><b>Czas:</b> ćwierćnuta, półnuta, ósemka, cała nuta.</li>
+          <li><b>Takt:</b> cztery ćwierćnuty w metrum 4/4.</li>
+          <li><b>Melodia:</b> kilka taktów czytanych i słyszanych razem.</li>
         </ol>
       </div>
     </section>
@@ -41,9 +41,9 @@
     <section id="pracownia" class="studio panel">
       <div class="studio-head">
         <div>
-          <span class="section-kicker">GŁÓWNE ĆWICZENIE</span>
-          <h2>Fortepian i pięciolinia razem</h2>
-          <p>W trybie swobodnym klikasz pojedyncze dźwięki. W trybie melodii cały zapis jest pod fortepianem i śledzi odtwarzanie.</p>
+          <span class="section-kicker">OD NUTY DO MELODII</span>
+          <h2>Ten sam fortepian i ta sama pięciolinia na każdym kroku</h2>
+          <p>Przechodzisz tylko do kolejnego pojęcia. Nie zmienia się narzędzie — rośnie tylko ilość informacji.</p>
         </div>
         <div class="current-note" id="currentNote">
           <span>Aktualny dźwięk</span>
@@ -52,11 +52,19 @@
         </div>
       </div>
 
-      <div class="mode-row">
-        <div class="segmented" id="modeSwitch">
-          <button class="active" data-mode="free">Swobodna gra</button>
-          <button data-mode="melody">Melodie</button>
-        </div>
+      <div class="learning-path" id="stageSwitch">
+        <button class="stage-button active" data-stage="pitch"><span>1</span><b>Wysokość</b><small>gdzie leży nuta</small></button>
+        <button class="stage-button" data-stage="duration"><span>2</span><b>Wartość nuty</b><small>jak długo trwa</small></button>
+        <button class="stage-button" data-stage="measure"><span>3</span><b>Takt 4/4</b><small>cztery pulsy</small></button>
+        <button class="stage-button" data-stage="melody"><span>4</span><b>Melodia</b><small>zastosowanie całości</small></button>
+      </div>
+
+      <div class="stage-explanation" id="stageExplanation">
+        <strong>1. Najpierw tylko wysokość dźwięku.</strong>
+        <span>Klikaj białe klawisze C–D–E–F–G–A–H i patrz, jak nuta przesuwa się po liniach i polach. Na tym etapie każda nuta jest ćwierćnutą tylko po to, żeby miała prosty kształt.</span>
+      </div>
+
+      <div class="utility-row">
         <label class="toggle"><input type="checkbox" id="showLabels" checked><span></span> podpisuj nuty</label>
         <label class="toggle"><input type="checkbox" id="showKeyboardLabels" checked><span></span> podpisuj klawisze</label>
       </div>
@@ -64,7 +72,7 @@
       <div class="piano-frame">
         <div class="piano-caption">
           <span><b>Fortepian:</b> C3–H5</span>
-          <span class="hint">Kliknij klawisz — zapis poniżej zmieni się natychmiast.</span>
+          <span class="hint">Kliknij klawisz — usłyszysz dźwięk i zobaczysz jego zapis poniżej.</span>
         </div>
         <div class="piano-scroll">
           <div class="piano" id="piano" aria-label="Interaktywna klawiatura fortepianu od C3 do H5"></div>
@@ -72,9 +80,9 @@
       </div>
 
       <div class="score-frame">
-        <div id="freeToolbar" class="score-toolbar">
+        <div id="pitchToolbar" class="score-toolbar">
           <div>
-            <strong>Ten sam dźwięk zapisany na pięciolinii</strong>
+            <strong>Etap 1 — gdzie leży nuta?</strong>
             <span id="notePositionText">C4 — dodatkowa linia pod pięciolinią</span>
           </div>
           <div class="octave-buttons">
@@ -84,7 +92,32 @@
           </div>
         </div>
 
-        <div id="melodyToolbar" class="score-toolbar melody-toolbar hidden">
+        <div id="durationToolbar" class="score-toolbar hidden">
+          <div>
+            <strong>Etap 2 — ta sama wysokość, inny czas trwania</strong>
+            <span>Położenie nuty się nie zmienia. Zmienia się jej kształt i długość dźwięku.</span>
+          </div>
+          <div class="value-picker" id="valuePicker">
+            <button data-beats="0.5"><b>♪</b><span>ósemka</span><small>½ pulsu</small></button>
+            <button data-beats="1" class="active"><b>♩</b><span>ćwierćnuta</span><small>1 puls</small></button>
+            <button data-beats="2"><b>𝅗𝅥</b><span>półnuta</span><small>2 pulsy</small></button>
+            <button data-beats="4"><b>𝅝</b><span>cała nuta</span><small>4 pulsy</small></button>
+            <button class="primary" id="playValue">▶ Posłuchaj długości</button>
+          </div>
+        </div>
+
+        <div id="measureToolbar" class="score-toolbar hidden">
+          <div>
+            <strong>Etap 3 — jeden takt 4/4</strong>
+            <span>C4 – D4 – E4 – F4. Każda nuta to ćwierćnuta, więc razem zajmują 4 pulsy.</span>
+          </div>
+          <div class="player-controls">
+            <button class="primary" id="playMeasure">▶ Zagraj takt</button>
+            <label>Tempo <input id="measureTempo" type="range" min="50" max="130" value="76"><b><span id="measureTempoValue">76</span> BPM</b></label>
+          </div>
+        </div>
+
+        <div id="melodyToolbar" class="score-toolbar hidden">
           <div class="song-picker" id="songPicker"></div>
           <div class="player-controls">
             <button class="primary" id="playMelody">▶ Graj</button>
@@ -95,11 +128,11 @@
         </div>
 
         <div class="paper score-scroll" id="scoreScroll">
-          <svg id="score" viewBox="0 0 1000 300" role="img" aria-label="Interaktywna pięciolinia"></svg>
+          <svg id="score" viewBox="0 0 1000 390" role="img" aria-label="Interaktywna pięciolinia"></svg>
         </div>
 
         <div class="playback-line">
-          <div id="playbackStatus"><b>Swobodna gra:</b> kliknij klawisz fortepianu.</div>
+          <div id="playbackStatus"><b>Wysokość:</b> kliknij klawisz i obserwuj położenie nuty.</div>
           <div id="beatStatus"></div>
         </div>
       </div>
@@ -107,29 +140,29 @@
       <div class="integrated-help">
         <div><b>Na linii czy w polu?</b><span id="lineSpaceHint">C4 leży na dodatkowej linii pod pięciolinią.</span></div>
         <div><b>Oktawa</b><span id="octaveHint">Numer 4 oznacza oktawę razkreślną.</span></div>
-        <div><b>Wysokość</b><span>Im wyżej nuta na pięciolinii, tym wyższy klawisz i wyższy dźwięk.</span></div>
+        <div><b>Najważniejsza zasada</b><span id="conceptHint">Położenie = wysokość dźwięku. Na razie ignoruj rytm.</span></div>
       </div>
     </section>
 
     <section id="teoria" class="theory-section">
       <div class="section-title">
-        <div><span class="section-kicker">ŚCIĄGA</span><h2>Jak czytać pięciolinię</h2></div>
-        <p>To są rzeczy, które warto mieć pod ręką podczas klikania fortepianu — nie osobny „kurs”.</p>
+        <div><span class="section-kicker">ŚCIĄGA</span><h2>Mapa pięciolinii</h2></div>
+        <p>To ma pomagać podczas ćwiczenia, a nie wyprzedzać materiał.</p>
       </div>
 
       <div class="theory-grid">
         <article class="panel theory-card wide">
-          <h3>Klucz wiolinowy: mapa dźwięków</h3>
+          <h3>Klucz wiolinowy</h3>
           <div class="staff-map">
             <div class="map-group"><span>Linie od dołu</span><strong>E4 · G4 · H4 · D5 · F5</strong></div>
             <div class="map-group"><span>Pola od dołu</span><strong>F4 · A4 · C5 · E5</strong></div>
           </div>
-          <p>Nuty idą zawsze kolejno: C–D–E–F–G–A–H–C… Jeśli przesuwasz się o jedną linię albo jedno pole do góry, przechodzisz do następnej litery.</p>
+          <p>Przechodząc kolejno z linii do pola albo z pola do linii, idziesz po nazwach C–D–E–F–G–A–H–C…</p>
         </article>
 
         <article class="panel theory-card">
           <h3>Oktawy</h3>
-          <p>Po H zaczyna się znowu C. <b>C3, C4 i C5</b> mają tę samą nazwę literową, ale leżą w różnych rejestrach.</p>
+          <p>C3, C4 i C5 mają tę samą nazwę literową, ale różną wysokość. C5 ma dwa razy większą częstotliwość niż C4.</p>
           <div class="mini-actions">
             <button data-demo-midi="48">♪ C3</button><button data-demo-midi="60">♪ C4</button><button data-demo-midi="72">♪ C5</button>
           </div>
@@ -137,7 +170,7 @@
 
         <article class="panel theory-card">
           <h3>Krzyżyk i bemol</h3>
-          <p><b>♯</b> podwyższa dźwięk o pół tonu, <b>♭</b> obniża o pół tonu. Na fortepianie najczęściej trafiasz wtedy na czarny klawisz.</p>
+          <p><b>♯</b> podwyższa o pół tonu, <b>♭</b> obniża o pół tonu. To temat poboczny względem podstawowego czytania białych klawiszy.</p>
           <div class="mini-actions">
             <button data-demo-midi="60">C</button><button data-demo-midi="61">C♯ / D♭</button><button data-demo-midi="62">D</button>
           </div>
@@ -145,13 +178,13 @@
 
         <article class="panel theory-card">
           <h3>Gama C-dur</h3>
-          <p>C–D–E–F–G–A–H–C. To dobry pierwszy wzorzec, bo używa samych białych klawiszy.</p>
-          <button class="primary small" id="playScale">▶ Zagraj i pokaż gamę</button>
+          <p>C–D–E–F–G–A–H–C. Dobry wzorzec do utrwalenia kolejności nazw.</p>
+          <button class="primary small" id="playScale">▶ Zagraj gamę</button>
         </article>
 
         <article class="panel theory-card">
           <h3>Akord C-dur</h3>
-          <p>C + E + G zagrane jednocześnie. To przykład, że nuty mogą tworzyć nie tylko melodię, ale też harmonię.</p>
+          <p>C + E + G zagrane jednocześnie. To już harmonia, a nie melodia.</p>
           <button class="small" id="playChord">▶ C + E + G</button>
         </article>
       </div>
@@ -159,21 +192,21 @@
 
     <section id="rytm" class="rhythm-section">
       <div class="section-title">
-        <div><span class="section-kicker">RYTM</span><h2>Co oznacza kształt nuty i takt</h2></div>
-        <p>Położenie określa wysokość. Kształt nuty określa czas trwania. Kreski pionowe dzielą zapis na takty.</p>
+        <div><span class="section-kicker">Rytm i metrum</span><h2>Co już widziałeś w etapach 2 i 3</h2></div>
+        <p>Ta sekcja jest ściągą po ćwiczeniu, nie wstępem do melodii.</p>
       </div>
 
       <div class="values-grid">
-        <div class="panel value-card"><span class="symbol">𝅝</span><div><b>Cała nuta</b><small>4 ćwierćnuty</small></div></div>
-        <div class="panel value-card"><span class="symbol">𝅗𝅥</span><div><b>Półnuta</b><small>2 ćwierćnuty</small></div></div>
-        <div class="panel value-card"><span class="symbol">♩</span><div><b>Ćwierćnuta</b><small>1 uderzenie w 4/4</small></div></div>
-        <div class="panel value-card"><span class="symbol">♪</span><div><b>Ósemka</b><small>½ ćwierćnuty</small></div></div>
+        <div class="panel value-card"><span class="symbol">𝅝</span><div><b>Cała nuta</b><small>4 pulsy ćwierćnutowe</small></div></div>
+        <div class="panel value-card"><span class="symbol">𝅗𝅥</span><div><b>Półnuta</b><small>2 pulsy</small></div></div>
+        <div class="panel value-card"><span class="symbol">♩</span><div><b>Ćwierćnuta</b><small>1 puls</small></div></div>
+        <div class="panel value-card"><span class="symbol">♪</span><div><b>Ósemka</b><small>½ pulsu</small></div></div>
       </div>
 
       <div class="panel meter-lab">
         <div class="meter-copy">
           <h3>Metrum</h3>
-          <p><b>4/4</b> = cztery ćwierćnutowe pulsy w takcie. <b>3/4</b> = trzy. <b>6/8</b> = sześć ósemek, często odczuwanych jako dwie grupy po trzy.</p>
+          <p><b>4/4</b> oznacza cztery ćwierćnutowe pulsy w takcie. Kreska taktowa zamyka jedną taką grupę i zaczyna następną.</p>
         </div>
         <div class="meter-buttons">
           <button data-meter="2"><b>2/4</b><span>RAZ dwa</span></button>
@@ -188,7 +221,7 @@
       </div>
     </section>
 
-    <footer>Najważniejsze ćwiczenie jest zawsze w jednej sekcji: fortepian → pięciolinia → melodia → podświetlenie.</footer>
+    <footer>Najpierw rozpoznajesz pojedynczą nutę, potem jej wartość, potem takt, a dopiero potem pełną melodię.</footer>
   </main>
   <script src="app.js"></script>
 </body>
