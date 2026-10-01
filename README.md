@@ -1,15 +1,17 @@
-# Nuty — interaktywna nauka muzyki
+# Nuty — interaktywna pracownia
 
-Lekka, statyczna strona do nauki podstaw zapisu muzycznego.
+Interaktywna strona do nauki czytania nut poprzez jednoczesne łączenie klawiatury fortepianu, pięciolinii i dźwięku.
 
-## Funkcje
-- interaktywna pięciolinia i odsłuch nut gamy C-dur,
-- podstawowe wartości rytmiczne,
-- metrum 4/4, 3/4, 2/4 i 6/8,
-- metronom z regulowanym BPM,
-- quiz rozpoznawania nut,
-- skróty klawiaturowe 1–8 oraz C D E F G A H,
-- responsywny wygląd na telefonie i komputerze.
+## Najważniejsze funkcje
+- jedna zintegrowana pracownia: fortepian nad pięciolinią,
+- tryb swobodnej gry oraz tryb melodii,
+- podświetlanie jednocześnie klawisza i aktualnej nuty,
+- melodie: Panie Janie, Oda do radości, Twinkle Twinkle, Mary Had a Little Lamb,
+- regulacja tempa i zapętlanie melodii,
+- możliwość klikania nut bezpośrednio w zapisie,
+- zakres klawiatury C3–H5 z oktawami,
+- opcjonalne podpisy nut i klawiszy,
+- podstawy pięciolinii, rytmu, metrum, znaków chromatycznych, gamy i akordu C-dur.
 
 ## Publikacja
-Workflow `.github/workflows/pages.yml` publikuje stronę przez GitHub Pages po pushu do `main`.
+GitHub Actions publikuje stronę przez GitHub Pages po każdym pushu do `main`.
