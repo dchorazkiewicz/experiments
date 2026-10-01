@@ -218,7 +218,7 @@ function noteSvg(midi,x,beats,index=null){
   const idx=index===null?'':(' data-note-index="'+index+'"');
   return ledgerLines(y,x)+accText+
     '<g class="score-note"'+idx+' data-midi="'+midi+'" data-x="'+x+'">'+
-    '<ellipse class="note-head" cx="'+x+'" cy="'+y+'" rx="14" ry="9.5" transform="rotate(-18 '+x+' '+y+')" fill="'+fill+'" stroke="#16212a" stroke-width="3"/>'+
+    '<ellipse class="note-head" cx="'+x+'" cy="'+y+'" rx="14" ry="9.5" fill="'+fill+'" stroke="#16212a" stroke-width="3"/>'+
     stem+flag+dot+
     '<text class="pitch-label" x="'+x+'" y="'+(y+34)+'" text-anchor="middle">'+noteInfo(midi).full+'</text>'+
     '</g>';
