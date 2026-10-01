@@ -77,10 +77,10 @@ button.small,.theory-card button.small{padding:8px 10px;font-size:.86rem}
 .paper{background:var(--paper);color:var(--paperInk);border-radius:14px}
 .score-scroll{overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth}
 #score{display:block;height:300px;min-width:100%;width:100%}
-.note-head{transition:fill .08s,stroke .08s,filter .08s,transform .08s;transform-box:fill-box;transform-origin:center}
-.score-note.active .note-head{fill:var(--pink)!important;stroke:#8e214d!important;filter:drop-shadow(0 0 8px rgba(255,127,174,.55));transform:scale(1.18)}
+.note-head{transition:fill .08s,stroke .08s,filter .08s}
+.score-note.active .note-head{fill:var(--pink)!important;stroke:#8e214d!important;stroke-width:4.5!important;filter:drop-shadow(0 0 9px rgba(255,127,174,.72))}
 .score-note.active .pitch-label{fill:#a02355;font-weight:900}
-.score-note.active .stem,.score-note.active .flag{stroke:#a02355!important}
+.score-note.active .stem,.score-note.active .flag{stroke:#a02355!important;stroke-width:5!important}
 .pitch-label{font-family:Inter,system-ui,sans-serif;font-size:13px;font-weight:850;fill:#60717a}
 #score.hide-pitch-labels .pitch-label{display:none}
 .playback-line{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.88rem;padding:10px 2px 0}
